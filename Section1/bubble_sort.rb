@@ -1,21 +1,15 @@
-def bubble_sort(array)
-  n = array.length
-  swapped = true
 
-  until swapped == false
-    swapped = false
-
-    (n - 1).times do |i|
-      if array[i] > array[i + 1]
-        array[i], array[i + 1] = array[i + 1], array[i]
-        swapped = true
+def bubble_sort(arr)
+  n = arr.length
+  for i in 0...(n-1) do
+    for j in 0...(n-i-1) do
+      if arr[j] > arr[j + 1]
+        arr[j], arr[j + 1] = arr[j + 1], arr[j]
       end
     end
   end
-
-  print array
+  print arr
 end
-
 
 
 bubble_sort([10,10,5,4,6,4,3,2,0])

@@ -67,8 +67,10 @@ describe HashMap do
   end
 
   describe '#all_data' do
-    hash.set('Öykü', 'test')
-    hash.set('Öykü2', 'test2')
-    expect(hash.all_data).to eq([{ key: 'Öykü', value: 'test' }, { key: 'Öykü2', value: 'test2' }])
+    it 'returns all key-value pairs' do
+      hash.set('Öykü', 'test')
+      hash.set('Öykü2', 'test2')
+      expect(hash.all_data).to eq([{ key: 'Öykü', value: 'test' }, { key: 'Öykü2', value: 'test2' }])
+    end
   end
 end

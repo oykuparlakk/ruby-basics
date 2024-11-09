@@ -1,5 +1,5 @@
 def merge_sort(arr, depth = 0)
-  indent = "  " * depth 
+  indent = '  ' * depth
   puts "#{indent}merge_sort(#{arr.inspect})"
 
   return arr if arr.length <= 1
@@ -17,11 +17,11 @@ def merge(left, right)
   sorted = []
 
   until left.empty? || right.empty?
-    if left.first <= right.first
-      sorted << left.shift
-    else
-      sorted << right.shift
-    end
+    sorted << if left.first <= right.first
+                left.shift
+              else
+                right.shift
+              end
   end
 
   sorted + left + right

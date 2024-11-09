@@ -1,9 +1,8 @@
-dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
-
+dictionary = %w[below down go going horn how howdy it i low own part partner sit]
 
 def substrings(word, dictionary)
   word_downcase = word.downcase
-  counts = Hash.new(0) 
+  counts = Hash.new(0)
 
   dictionary.each do |substring|
     occurrences = word_downcase.scan(substring.downcase).length
@@ -13,5 +12,4 @@ def substrings(word, dictionary)
   counts
 end
 
-
-substrings("below", dictionary)
+substrings('below', dictionary)

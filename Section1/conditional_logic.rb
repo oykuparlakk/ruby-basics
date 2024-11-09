@@ -17,30 +17,28 @@ else
   puts 'release Kevin the octopus'
 end
 
-
 puts 5 <=> 10
 puts 10 <=> 10
 puts 10 <=> 5
 
-
 grade = 'F'
 
 did_i_pass = case grade
-  when 'A' then "Hell yeah!"
-  when 'D' then "Don't tell your mother."
-  else "'YOU SHALL NOT PASS!' -Gandalf"
-end
+             when 'A' then 'Hell yeah!'
+             when 'D' then "Don't tell your mother."
+             else "'YOU SHALL NOT PASS!' -Gandalf"
+             end
 
 puts did_i_pass
 
 age = 19
-puts "Welcome to a life of debt." unless age < 18
+puts 'Welcome to a life of debt.' unless age < 18
 
-unless age < 18
-  puts "Down with that sort of thing."
+if age < 18
+  puts 'careful now!'
 else
-  puts "careful now!"
+  puts 'Down with that sort of thing.'
 end
 
-response = age < 18 ? "You still have your entire life ahead of you." : "You're all grown up."
+response = age < 18 ? 'You still have your entire life ahead of you.' : "You're all grown up."
 puts response

@@ -1,16 +1,16 @@
-puts "Please enter the password that you want to encrypt:"
-text = gets.chomp.downcase 
+puts 'Please enter the password that you want to encrypt:'
+text = gets.chomp.downcase
 
-puts "Shift number:"
+puts 'Shift number:'
 shift_number = gets.chomp.to_i
 
 letters_hash = {}
-("a".."z").to_a.each_with_index do |letter, index|
+('a'..'z').to_a.each_with_index do |letter, index|
   letters_hash[index + 1] = letter
 end
 
 def encrypt(text, shift_number, letters_hash)
-  encrypted_text = ""
+  encrypted_text = ''
 
   text.each_char do |char|
     if letters_hash.has_value?(char)

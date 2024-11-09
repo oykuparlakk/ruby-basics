@@ -16,14 +16,14 @@ class HashMap
     !!@data.find { |pair| pair[:key] == key }
   end
 
-  def set(key,value)
+  def set(key, value)
     existing_hash = @data.find { |pair| pair[:key] == key }
     if existing_hash
       existing_hash[:value] = value
     else
       @data << { key: key, value: value }
     end
-    #puts "{ key: #{key}, value: #{value} }"
+    # puts "{ key: #{key}, value: #{value} }"
     { key: key, value: value }
   end
 
@@ -41,14 +41,12 @@ class HashMap
     @data.clear
     true
   end
-
 end
 
-
 hash = HashMap.new
-hash.set("Öykü","test")
-hash.set("Öykü2","test2")
-hash.set("Öykü3","test3")
+hash.set('Öykü', 'test')
+hash.set('Öykü2', 'test2')
+hash.set('Öykü3', 'test3')
 
 puts hash.all_data.inspect
 

@@ -1,10 +1,10 @@
-print "Learning to code is FUN!"
+print 'Learning to code is FUN!'
 
-p "------------------------------"
+p '------------------------------'
 
-p "test yapıyorum"
+p 'test yapıyorum'
 
-puts "veri girişi yap"
+puts 'veri girişi yap'
 
 veri = gets.chomp
 

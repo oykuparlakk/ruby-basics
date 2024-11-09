@@ -7,24 +7,26 @@ class HashMap
     @data
   end
 
+  def find_pair(key)
+    @data.find { |pair| pair[:key] == key }
+  end
+
   def get(key)
-    hash = @data.find { |pair| pair[:key] == key }
-    hash ? hash[:value] : nil
+    find_pair(key)&.dig(:value)
   end
 
   def search(key)
-    !!@data.find { |pair| pair[:key] == key }
+    !!find_pair(key)
   end
 
   def set(key, value)
-    existing_hash = @data.find { |pair| pair[:key] == key }
+    existing_hash = find_pair(key)
     if existing_hash
       existing_hash[:value] = value
     else
       @data << { key: key, value: value }
     end
-    # puts "{ key: #{key}, value: #{value} }"
-    { key: key, value: value }
+    @data.last
   end
 
   def remove(key)
@@ -38,15 +40,14 @@ class HashMap
   end
 
   def remove_all
-    @data.clear
-    true
+    !!@data.clear
   end
 end
 
 hash = HashMap.new
-hash.set('Öykü', 'test')
-hash.set('Öykü2', 'test2')
-hash.set('Öykü3', 'test3')
+hash.set('Ali', '0555 123 45 67')
+hash.set('Ayşe', '0532 987 65 43')
+hash.set('Mehmet', '0544 456 78 90')
 
 puts hash.all_data.inspect
 
